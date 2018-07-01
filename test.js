@@ -1,4 +1,5 @@
 "use strict";
+require("dotenv").config();
 const testIntegration = require("any-queue-test");
 const mysqlConnector = require(".");
 
@@ -10,6 +11,6 @@ testIntegration({
   name: "mysql",
   createPersistenceInterface: () =>
     mysqlConnector({
-      uri: "mysql://root:admin@localhost/any-queue"
+      uri: process.env.DB_URI
     })
 });

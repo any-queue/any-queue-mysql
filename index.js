@@ -13,18 +13,13 @@ module.exports = ({ uri, config }) => {
 
   const connect = function connect() {
     log("connecting");
-    // TBD should we reuse connection?
+
     ++connectionCount;
     if (connecting) return connecting;
 
     log("creating new connection");
 
     sequelize = new Sequelize(uri, {
-      // TODO: configure connection pool
-
-      // Only used in sqlite connections.
-      storage: "./.tmp/database.sqlite",
-
       // Allow the user inject db-specific config.
       dialectOptions: config,
 

@@ -12,7 +12,15 @@
 $ npm install --save any-queue-mysql
 ```
 
+## Test
+
+In order to test the library, mysql-server must be installed in the system and a database must be created. Configuration parameters are provided via [dotenv](https://github.com/motdotla/dotenv).
+
+Then, run `npm install && npm test`.
+
 ## Usage
+
+The library is used together with `any-queue`. See [any-queue](https://github.com/any-queue/any-queue) for more details.
 
 ```js
 import { Queue } from "any-queue";
